@@ -88,7 +88,6 @@ bool check_drm_features(struct wlr_drm_backend *drm) {
 static bool add_plane(struct wlr_drm_backend *drm,
 		struct wlr_drm_crtc *crtc, const drmModePlane *drm_plane,
 		uint32_t type, union wlr_drm_plane_props *props) {
-	assert(!(type == DRM_PLANE_TYPE_PRIMARY && crtc->primary));
 	assert(!(type == DRM_PLANE_TYPE_CURSOR && crtc->cursor));
 
 	struct wlr_drm_plane *p = calloc(1, sizeof(*p));
